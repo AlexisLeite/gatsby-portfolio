@@ -1,0 +1,14 @@
+{
+  "go up": "ir arriba",
+  "translatorSections": {
+    "about": {
+      "sobre mi": "Yo soy Alexis"
+    },
+    "content": {
+      "toc": "Tabla de contenidos"
+    },
+    "home": {
+      "bienvenida": "Bienvenidos todos"
+    }
+  }
+}

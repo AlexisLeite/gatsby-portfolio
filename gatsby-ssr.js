@@ -1,7 +1,8 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/ssr-apis/
- */
+const { setTranslationsSource } = require("./src/services/translate");
+const React = require("react");
+const Layout = require("./src/components/layout").default;
 
-// You can delete this file if you're not using it
+exports.wrapPageElement = ({ element, props }) => {
+  setTranslationsSource(props.pageContext.translations);
+  return <Layout {...props}>{element}</Layout>;
+};

@@ -1,0 +1,31 @@
+@mixin hover
+  &:hover, &:active, &:focus, &:target
+    @content
+
+$breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)
+
+@mixin breakpoint($breakpoint) 
+  @if map-has-key($breakpoints, $breakpoint) 
+    @media (min-width: map-get($breakpoints, $breakpoint)) 
+      @content
+  @else 
+    @warn "Unfortunately, no value could be retrieved from `#$breakpoint`. Available breakpoints are: #map-keys($breakpoints)."
+
+
+@mixin scroll($width: 5px, $background: brown, $borderColor: #00000000)
+  &::-webkit-scrollbar 
+    width: $width
+  
+  
+  &::-webkit-scrollbar-track 
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3)
+  
+  
+  &::-webkit-scrollbar-thumb 
+    background-color: $background
+    outline: 1px solid $borderColor
+
+  &::-webkit-scrollbar-button
+    background: brown
+    height: 2em
+  

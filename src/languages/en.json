@@ -1,0 +1,35 @@
+{
+  "algo": "some",
+  "inicio": "home",
+  "clienter": "clienter",
+  "detalles de uso del templater": "templater usage",
+  "detalles-programáticos": "programmatic-details",
+  "detalles programáticos": "programmatic details",
+  "detalles programáticos de la aplicación matemágica": "matemagic's programmatic details",
+  "ejemplo": "example",
+  "ejemplo1": "example1",
+  "ejemplo2": "example2",
+  "ejemplo3": "example3",
+  "ejemplos": "examples",
+  "ejemplos importantes": "important examples",
+  "gestión de clientes": "clients management",
+  "mas ejemplos": "more examples",
+  "matemagica": "matemagics",
+  "otro": "other",
+  "otro mas": "another",
+  "sobre": "about",
+  "sobre mi": "about me",
+
+  "translatorSections": {
+    "content": {
+      "fallback_language": "This content is not available in your language and another language is provided instead. We are very sorry about this.",
+      "toc": "table of contents"
+    },
+    "about": {
+      "sobre mi": "about me"
+    },
+    "home": {
+      "bienvenida": "Welcome you are"
+    }
+  }
+}
