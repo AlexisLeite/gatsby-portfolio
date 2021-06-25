@@ -5,6 +5,10 @@ export interface IIndexProps {}
 
 export default class Index extends React.Component<IIndexProps> {
   public render() {
-    return <p> {translate("bienvenida")} </p>;
+    return (
+      <section id="main-banner">
+        <h1>Bienvenidos</h1>
+      </section>
+    );
   }
 }

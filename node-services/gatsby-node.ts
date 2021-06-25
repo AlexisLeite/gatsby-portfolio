@@ -103,7 +103,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       });
     }
   }
-
+  /* 
   multiLanguageStore.addPage({
     componentName: resolve(__dirname, "../src/components/home.tsx"),
     description: "La descripción de la página",
@@ -136,11 +136,15 @@ export const createPages: GatsbyNode["createPages"] = async ({
     ],
     order: "sobre",
     translations: "about",
-  });
+  }); */
 
   let everyPath = multiLanguageStore.build();
 
+  let homeContext = {};
   for (let page of everyPath) {
+    // Get context for home route
+    if (page.order === "home" && page.lang === "es") homeContext = page;
+
     let path = page.url;
     createPage({
       path,
@@ -148,4 +152,10 @@ export const createPages: GatsbyNode["createPages"] = async ({
       component: page.componentName,
     });
   }
+  /* 
+  createPage({
+    path: "/",
+    component: resolve(__dirname, "../src/components/home.tsx"),
+    context: homeContext,
+  }); */
 };

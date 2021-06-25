@@ -16,6 +16,7 @@ interface pathProperties {
   label?: string;
   url?: string;
   order: string;
+  target?: string;
 }
 
 class menuTree {
@@ -25,6 +26,7 @@ class menuTree {
   order = "";
   id = "";
   url = "";
+  target = "";
 
   constructor(props: pathProperties) {
     Object.assign(this, props);
@@ -166,18 +168,7 @@ export default class Navigation extends React.PureComponent<NavigationProps> {
       </ul>
     ));
     let noGrouped = noGroup.map(child => {
-      let siblings =
-        child.id === "Sobre"
-          ? [
-              <LanguageSelector
-                key="language"
-                id="language-selector"
-                alternateLanguages={this.props.alternateLanguages}
-                lang={this.props.lang}
-              />,
-            ]
-          : [];
-      return child.print({ siblings, id: child.id });
+      return child.print({ id: child.id });
     });
     MenuItems = [...noGrouped, ...grouped];
 
@@ -187,7 +178,55 @@ export default class Navigation extends React.PureComponent<NavigationProps> {
           this.updateNavClassByScroll(true);
         }}
       >
-        <ul id="Main-navigation">{MenuItems}</ul>
+        <ul id="Main-navigation">
+          <ul>
+            <li>
+              <a
+                href="http://www.uyucode.net/app/matemagica"
+                target="blank"
+                title={translate("Matemagica title")}
+              >
+                {translate("Matemagica")}
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://www.uyucode.net/app/chat"
+                target="blank"
+                title={translate("Chat title")}
+              >
+                {translate("Chat")}
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://www.uyucode.net/app/clienter"
+                target="blank"
+                title={translate("Clienter title")}
+              >
+                {translate("Clienter")}
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://www.uyucode.net/app/tic tac toe"
+                target="blank"
+                title={translate("Tictactoe title")}
+              >
+                {translate("Tic tac toe")}
+              </a>
+            </li>
+          </ul>
+          {MenuItems}
+          <li>
+            <LanguageSelector
+              key="language"
+              id="language-selector"
+              alternateLanguages={this.props.alternateLanguages}
+              lang={this.props.lang}
+            />
+          </li>
+        </ul>
       </nav>
     );
   }
