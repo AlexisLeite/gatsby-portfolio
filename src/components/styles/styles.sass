@@ -2,6 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap')
 
+body 
+  min-height: 100vh
+  min-height: -webkit-fill-available
+
+html 
+  height: -webkit-fill-available
+
+
 $font-stack: 'Poppins', sans-serif
 $primary-color: #333
 $nav-background: brown
@@ -29,11 +37,13 @@ body
   margin: 0
   background: #fffed0
   margin-top: 4em
+  width: 100vw
 
   @include scroll()
   
   *
     box-sizing: border-box
+    word-break: break-word
 
   #Layout
     .notification
@@ -46,27 +56,6 @@ body
 
     main
       text-align: center
-
-      #main-banner
-
-        h1
-          font-size: 5em
-          color: white
-          opacity: 1
-          position: absolute
-          margin-top: 30vh
-          padding: 0 2em
-          text-shadow: 0 0 3px black
-
-        &::before
-          position: absolute
-          display: block
-          content: ""
-          height: 100vh
-          width: 100%
-          background: url('/images/allapps.png')
-          background-size: contain
-          filter: brightness(1) opacity(0.5) grayscale(0.9)
 
       .markdown-content
         width: 80vw
@@ -134,7 +123,7 @@ body
         border-right: 40px solid #bb481a
         transition-duration: 0.15s
         box-sizing: content-box
-        z-index: 100
+        z-index: 99
         box-shadow: -3px 0 5px 5px black
 
         h3
@@ -210,6 +199,13 @@ body
       z-index: 100
       box-shadow: 0 3px 5px 5px #0009
       transition-duration: 0.3s
+
+      ul
+        z-index: 101
+
+        li
+          z-index: 101
+
 
       &.hidden
         top: -500px
@@ -340,5 +336,84 @@ body
         opacity: 1
         transition-duration: 0.3s
 
+@media (orientation: portrait)
+  body
+    #Layout
+      width: auto
+      main
+        width: auto
+        .markdown-content
+          width: auto
+          margin-top: 4em
+          padding: 1em
+
+          h1, h2
+            text-align: left
+            padding-left: 0
+            margin-left: 0
+
+            a 
+              display: none
+
+          .embedVideo-container
+            .embedVideo-iframe
+              height: 30vh
+        
+        aside.table-of-contents
+          left: 0
+          right: 0
+          top: auto
+          bottom: calc(2em - 50vh)
+          width: 100%
+          height: 50vh
+          border-right: none
+
+          *
+            font-size: 1.2rem
 
 
+          h3
+            background: #bb481a
+            position: static
+            margin: 0
+            height: 2em
+            padding-top: 4px
+
+            transform-origin: 0
+            transform: none
+
+          & > div 
+            width: 100%
+            height: 45vh
+
+            ul > li > a
+              padding: 5px
+
+          &.show
+            bottom: 0
+
+      nav ul#Main-navigation 
+        flex-wrap: wrap
+        height: auto
+
+        & > ul
+          height: auto
+          flex-wrap: wrap
+          display: flex
+          flex-basis: 100%
+
+          ul
+            z-index: 101
+            right: -100%
+            top: 0
+
+            li
+              z-index: 101
+
+
+          li
+            height: auto
+            
+      #GoUpButton
+        right: 0.5em
+        bottom: 2.5em

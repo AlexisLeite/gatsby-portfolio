@@ -181,40 +181,59 @@ export default class Navigation extends React.PureComponent<NavigationProps> {
         <ul id="Main-navigation">
           <ul>
             <li>
-              <a
-                href="http://www.uyucode.net/app/matemagica"
-                target="blank"
-                title={translate("Matemagica title")}
-              >
-                {translate("Matemagica")}
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://www.uyucode.net/app/chat"
-                target="blank"
-                title={translate("Chat title")}
-              >
-                {translate("Chat")}
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://www.uyucode.net/app/clienter"
-                target="blank"
-                title={translate("Clienter title")}
-              >
-                {translate("Clienter")}
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://www.uyucode.net/app/tic tac toe"
-                target="blank"
-                title={translate("Tictactoe title")}
-              >
-                {translate("Tic tac toe")}
-              </a>
+              <span className="menu-item">{translate("Aplicaciones")}</span>
+              <ul>
+                <li>
+                  <a
+                    className="external-item"
+                    href="http://www.uyucode.net/curriculum"
+                    target="blank"
+                    title={translate("Curriculum")}
+                  >
+                    {translate("Curriculum")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="external-item"
+                    href="http://www.uyucode.net/app/matemagica"
+                    target="blank"
+                    title={translate("Matemagica title")}
+                  >
+                    {translate("Matemagica")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="external-item"
+                    href="http://www.uyucode.net/app/chat"
+                    target="blank"
+                    title={translate("Chat title")}
+                  >
+                    {translate("Chat")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="external-item"
+                    href="http://www.uyucode.net/app/clienter"
+                    target="blank"
+                    title={translate("Clienter title")}
+                  >
+                    {translate("Clienter")}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    className="external-item"
+                    href="http://www.uyucode.net/app/tic tac toe"
+                    target="blank"
+                    title={translate("Tictactoe title")}
+                  >
+                    {translate("Tic tac toe")}
+                  </a>
+                </li>
+              </ul>
             </li>
           </ul>
           {MenuItems}
